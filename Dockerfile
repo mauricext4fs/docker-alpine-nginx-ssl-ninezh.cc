@@ -1,6 +1,7 @@
 FROM nginx:alpine
 EXPOSE 443
 EXPOSE 80
+RUN apk update && apk add ssmtp
 COPY ./etc/nginx/options.include /etc/nginx/options.include
 COPY ./etc/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY ./etc/nginx/proxy.conf /etc/nginx/conf.d/proxy.conf
